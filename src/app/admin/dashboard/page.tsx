@@ -13,7 +13,8 @@ import {
   X,
   Download,
   Shield,
-  Database
+  Database,
+  AlertTriangle
 } from 'lucide-react';
 import { getEntries, deleteEntry as deleteEntryFromDB, clearAllEntries, type Entry } from '@/lib/supabase';
 import { generateTestData } from '../../test-data';
@@ -23,6 +24,8 @@ export default function AdminDashboard() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterAmount, setFilterAmount] = useState('all');
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -36,19 +39,23 @@ export default function AdminDashboard() {
     // Load entries from localStorage
     loadEntries();
 
-    // Set up interval to check for new entries every 2 seconds
-    const interval = setInterval(loadEntries, 2000);
+    // Set up interval to check for new entries every 5 seconds
+    const interval = setInterval(loadEntries, 5000);
     return () => clearInterval(interval);
   }, [router]);
 
   const loadEntries = async () => {
     try {
+      setError(null);
       const data = await getEntries();
       setEntries(data);
+      setIsLoading(false);
       console.log('Loaded entries:', data.length);
     } catch (error) {
       console.error('Error loading entries:', error);
+      setError('無法載入資料，請檢查 Supabase 連線設定');
       setEntries([]);
+      setIsLoading(false);
     }
   };
 
@@ -155,6 +162,35 @@ export default function AdminDashboard() {
             登出
           </button>
         </div>
+
+        {/* Error Display */}
+        {error && (
+          <div className="luxury-card rounded-xl p-4 mb-6 bg-red-500/10 border border-red-500/30">
+            <div className="flex items-center gap-3">
+              <AlertTriangle className="w-6 h-6 text-red-400" />
+              <div className="flex-1">
+                <p className="text-red-400 font-semibold mb-1">連線錯誤</p>
+                <p className="text-red-300/80 text-sm">{error}</p>
+                <p className="text-red-300/60 text-xs mt-2">
+                  請確認 Supabase 專案狀態：<br />
+                  1. 檢查專案是否暫停<br />
+                  2. 確認資料庫 entries 資料表是否存在<br />
+                  3. 檢查環境變數設定
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Loading Display */}
+        {isLoading && !error && (
+          <div className="luxury-card rounded-xl p-8 mb-6 text-center">
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-12 h-12 border-4 border-yellow-500/30 border-t-yellow-500 rounded-full animate-spin"></div>
+              <p className="text-yellow-500">載入資料中...</p>
+            </div>
+          </div>
+        )}
 
         {/* Statistics Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
