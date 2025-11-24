@@ -277,9 +277,11 @@ export default function Home() {
             className="pulse-button block"
             style={{ animationDelay: '0s' }}
           >
-            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
-              Button 1
-            </div>
+            <img
+              src="/button1.png"
+              alt="Button 1"
+              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+            />
           </a>
 
           {/* Button 2 - Replace /button2.png and /button2-link with your own */}
@@ -290,9 +292,11 @@ export default function Home() {
             className="pulse-button block"
             style={{ animationDelay: '0.2s' }}
           >
-            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
-              Button 2
-            </div>
+            <img
+              src="/button2.png"
+              alt="Button 2"
+              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+            />
           </a>
 
           {/* Button 3 - Replace /button3.png and /button3-link with your own */}
@@ -303,9 +307,11 @@ export default function Home() {
             className="pulse-button block"
             style={{ animationDelay: '0.4s' }}
           >
-            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
-              Button 3
-            </div>
+            <img
+              src="/button3.png"
+              alt="Button 3"
+              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+            />
           </a>
 
           {/* Button 4 - Replace /button4.png and /button4-link with your own */}
@@ -316,9 +322,11 @@ export default function Home() {
             className="pulse-button block"
             style={{ animationDelay: '0.6s' }}
           >
-            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
-              Button 4
-            </div>
+            <img
+              src="/button4.png"
+              alt="Button 4"
+              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+            />
           </a>
 
           {/* Button 5 - Replace /button5.png and /button5-link with your own */}
@@ -329,9 +337,11 @@ export default function Home() {
             className="pulse-button block"
             style={{ animationDelay: '0.8s' }}
           >
-            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
-              Button 5
-            </div>
+            <img
+              src="/button5.png"
+              alt="Button 5"
+              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+            />
           </a>
 
           {/* Button 6 - Replace /button6.png and /button6-link with your own */}
@@ -342,9 +352,11 @@ export default function Home() {
             className="pulse-button block"
             style={{ animationDelay: '1s' }}
           >
-            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
-              Button 6
-            </div>
+            <img
+              src="/button6.png"
+              alt="Button 6"
+              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+            />
           </a>
         </div>
 
