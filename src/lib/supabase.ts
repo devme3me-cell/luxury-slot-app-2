@@ -3,16 +3,30 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  db: {
-    schema: 'public',
-  },
-  global: {
-    headers: {
-      'x-client-info': 'supabase-js-web',
+// Validate environment variables
+if (!supabaseUrl || supabaseUrl === 'https://your-project.supabase.co') {
+  console.warn('⚠️  NEXT_PUBLIC_SUPABASE_URL is not configured. Please set it in .env.local');
+}
+
+if (!supabaseAnonKey || supabaseAnonKey === 'your-anon-key-here') {
+  console.warn('⚠️  NEXT_PUBLIC_SUPABASE_ANON_KEY is not configured. Please set it in .env.local');
+}
+
+// Create Supabase client with proper error handling
+export const supabase = createClient(
+  supabaseUrl || 'https://placeholder.supabase.co',
+  supabaseAnonKey || 'placeholder-key',
+  {
+    db: {
+      schema: 'public',
     },
-  },
-});
+    global: {
+      headers: {
+        'x-client-info': 'supabase-js-web',
+      },
+    },
+  }
+);
 
 export interface Entry {
   id: string;

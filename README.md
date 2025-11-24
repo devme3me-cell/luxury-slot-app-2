@@ -33,8 +33,8 @@ A luxury slot machine lottery application with Supabase backend and admin dashbo
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd luxury-slot-app
+git clone https://github.com/devme3me-cell/luxury-slot-app-2.git
+cd luxury-slot-app-2
 ```
 
 2. Install dependencies:
@@ -43,20 +43,22 @@ bun install
 ```
 
 3. Set up Supabase:
-   - Create a new Supabase project
+   - Create a new Supabase project at https://supabase.com
    - Run the SQL from `SUPABASE_SETUP.md` to create the database schema
-   - Copy your project URL and anon key
+   - Go to Settings > API to get your project URL and anon key
 
 4. Configure environment variables:
 ```bash
 cp .env.example .env.local
 ```
 
-Edit `.env.local` and add your Supabase credentials:
+Edit `.env.local` and add your **actual** Supabase credentials:
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-actual-anon-key-from-supabase
 ```
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
-```
+
+**⚠️ IMPORTANT**: The app will run with placeholder credentials but database features won't work until you configure real Supabase credentials.
 
 5. Run the development server:
 ```bash
