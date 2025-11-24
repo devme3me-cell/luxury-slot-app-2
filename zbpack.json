@@ -1,4 +1,0 @@
-1|{
-2|  "build_command": "bun install && bun run build",
-3|  "start_command": "bun run start"
-4|}

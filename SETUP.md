@@ -147,10 +147,10 @@ If data isn't saving or loading:
 
 ## Next Steps
 
-- Read `DEPLOYMENT_CHECKLIST.md` for deployment guidelines
-- Read `ZEABUR_DEPLOYMENT.md` for Zeabur-specific deployment
+- Deploy to Netlify, Vercel, or your preferred hosting platform
 - Customize the prize tiers in `src/app/page.tsx`
 - Modify the UI styling in the component files
+- Set up proper authentication for the admin dashboard
 
 ## Security Notes
 

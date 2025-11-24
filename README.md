@@ -138,17 +138,17 @@ See `SUPABASE_SETUP.md` for the complete database schema and setup instructions.
 
 ## Deployment
 
-### Zeabur Deployment
-
-See `ZEABUR_DEPLOYMENT.md` for detailed deployment instructions.
+The app can be deployed to:
+- **Netlify** (recommended) - Configuration included in `netlify.toml`
+- **Vercel** - Works out of the box with Next.js
+- **Any Node.js hosting** - Use `bun run build` and `bun run start`
 
 Quick steps:
 1. Push code to Git repository
 2. Create a Supabase project and set up database
-3. Create a Zeabur project
-4. Connect your Git repository
-5. Add environment variables
-6. Deploy!
+3. Connect to your hosting platform
+4. Add environment variables (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)
+5. Deploy!
 
 ## Development
 
@@ -185,6 +185,6 @@ MIT
 ## Support
 
 For issues and questions:
-- Check the deployment guides
+- Check `SETUP.md` for detailed setup instructions
 - Review Supabase docs: https://supabase.com/docs
-- Review Zeabur docs: https://zeabur.com/docs
+- Review Next.js docs: https://nextjs.org/docs

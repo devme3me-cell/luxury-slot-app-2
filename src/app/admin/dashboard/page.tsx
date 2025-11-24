@@ -13,11 +13,9 @@ import {
   X,
   Download,
   Shield,
-  Database,
   AlertTriangle
 } from 'lucide-react';
 import { getEntries, deleteEntry as deleteEntryFromDB, clearAllEntries, type Entry } from '@/lib/supabase';
-import { generateTestData } from '../../test-data';
 
 export default function AdminDashboard() {
   const [entries, setEntries] = useState<Entry[]>([]);
@@ -106,15 +104,7 @@ export default function AdminDashboard() {
     }
   };
 
-  const handleGenerateTestData = async () => {
-    const success = await generateTestData();
-    if (success) {
-      await loadEntries();
-      alert('測試資料已生成！');
-    } else {
-      alert('已有資料存在，若要生成測試資料請先清除所有記錄。');
-    }
-  };
+
 
   // Filter entries based on search and amount filter
   const filteredEntries = entries.filter(entry => {
@@ -243,13 +233,6 @@ export default function AdminDashboard() {
               <option value="5000">$5,000</option>
               <option value="10000">$10,000</option>
             </select>
-            <button
-              onClick={handleGenerateTestData}
-              className="px-4 py-2 rounded-lg bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition flex items-center gap-2"
-            >
-              <Database className="w-4 h-4" />
-              生成測試資料
-            </button>
             <button
               onClick={handleClearAll}
               className="px-4 py-2 rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500/30 transition"
