@@ -3,30 +3,41 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
-// Validate environment variables
-if (!supabaseUrl || supabaseUrl === 'https://your-project.supabase.co') {
-  console.warn('⚠️  NEXT_PUBLIC_SUPABASE_URL is not configured. Please set it in .env.local');
-}
+// Check if Supabase is configured
+export const isSupabaseConfigured = supabaseUrl &&
+  supabaseAnonKey &&
+  supabaseUrl !== 'https://your-project.supabase.co' &&
+  supabaseAnonKey !== 'your-anon-key-here';
 
-if (!supabaseAnonKey || supabaseAnonKey === 'your-anon-key-here') {
-  console.warn('⚠️  NEXT_PUBLIC_SUPABASE_ANON_KEY is not configured. Please set it in .env.local');
+// Validate environment variables
+if (!isSupabaseConfigured) {
+  console.warn('⚠️  Supabase is not configured. Database features will be disabled.');
+  console.warn('To enable database features, set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in .env.local');
 }
 
 // Create Supabase client with proper error handling
-export const supabase = createClient(
-  supabaseUrl || 'https://placeholder.supabase.co',
-  supabaseAnonKey || 'placeholder-key',
-  {
-    db: {
-      schema: 'public',
-    },
-    global: {
-      headers: {
-        'x-client-info': 'supabase-js-web',
+// Use a dummy client if not configured to prevent connection errors
+export const supabase = isSupabaseConfigured
+  ? createClient(supabaseUrl, supabaseAnonKey, {
+      db: {
+        schema: 'public',
       },
-    },
-  }
-);
+      global: {
+        headers: {
+          'x-client-info': 'supabase-js-web',
+        },
+      },
+    })
+  : createClient('https://example.supabase.co', 'dummy-key', {
+      db: {
+        schema: 'public',
+      },
+      global: {
+        headers: {
+          'x-client-info': 'supabase-js-web',
+        },
+      },
+    });
 
 export interface Entry {
   id: string;
@@ -40,6 +51,10 @@ export interface Entry {
 
 // Connection test
 export async function testConnection() {
+  if (!isSupabaseConfigured) {
+    return { success: false, message: 'Supabase is not configured' };
+  }
+
   try {
     const { data, error } = await supabase
       .from('entries')
@@ -61,6 +76,11 @@ export async function testConnection() {
 
 // Entry operations
 export async function saveEntry(entry: Omit<Entry, 'created_at'>) {
+  if (!isSupabaseConfigured) {
+    console.warn('Supabase is not configured. Entry not saved.');
+    return [];
+  }
+
   const { data, error } = await supabase
     .from('entries')
     .insert([entry])
@@ -75,6 +95,11 @@ export async function saveEntry(entry: Omit<Entry, 'created_at'>) {
 }
 
 export async function getEntries(limit = 100) {
+  // Return empty array if Supabase is not configured
+  if (!isSupabaseConfigured) {
+    return [];
+  }
+
   try {
     const { data, error } = await supabase
       .from('entries')
@@ -95,6 +120,11 @@ export async function getEntries(limit = 100) {
 }
 
 export async function deleteEntry(id: string) {
+  if (!isSupabaseConfigured) {
+    console.warn('Supabase is not configured. Entry not deleted.');
+    return true;
+  }
+
   const { error } = await supabase
     .from('entries')
     .delete()
@@ -109,6 +139,11 @@ export async function deleteEntry(id: string) {
 }
 
 export async function clearAllEntries() {
+  if (!isSupabaseConfigured) {
+    console.warn('Supabase is not configured. No entries to clear.');
+    return true;
+  }
+
   const { error } = await supabase
     .from('entries')
     .delete()
@@ -123,6 +158,10 @@ export async function clearAllEntries() {
 }
 
 export async function getTodayEntries() {
+  if (!isSupabaseConfigured) {
+    return [];
+  }
+
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const todayStr = today.toISOString();
