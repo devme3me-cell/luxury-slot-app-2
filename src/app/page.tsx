@@ -253,17 +253,27 @@ export default function Home() {
       <div className="w-full max-w-4xl">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Crown className="w-10 h-10 text-yellow-500 crown-icon" />
+            <img
+              src="/crown-placeholder.png"
+              alt="Crown"
+              className="w-10 h-10 crown-icon"
+              onError={(e) => {
+                // Fallback to emoji if image not found
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+            <span className="text-4xl hidden">👑</span>
             <h1 className="text-4xl md:text-5xl font-bold gold-gradient">
               您的主治醫師達特喂
             </h1>
             <Crown className="w-10 h-10 text-yellow-500 crown-icon" style={{ animationDelay: '0.5s' }} />
           </div>
-          <h2 className="text-2xl md:text-3xl font-semibold text-yellow-500/80 mb-2">
-            每日儲值輪盤簽到活動
+          <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-[#dedede]">
+            每日儲值輪盤簽到活動 v2.84
           </h2>
           <p className="text-yellow-500/60">
-            每日儲值1000元以上即可抽獎，需上傳儲值證明
+            儲值 $1,000 以上當日即可享有幸運抽獎一次，保證有獎喔！
           </p>
         </div>
 

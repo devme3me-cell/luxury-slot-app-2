@@ -1,0 +1,19 @@
+📌 CROWN IMAGE PLACEHOLDER
+================================
+
+To replace the crown icon with your own image:
+
+1. Add your crown image to this folder (public/)
+2. Name it: crown-placeholder.png  (or .gif for animated)
+3. Recommended size: 40x40 pixels or larger
+4. Use PNG with transparent background for best results
+
+The app will automatically use your image!
+
+If no image is found, it will show a crown emoji (👑) as fallback.
+
+--------------------------------
+Need a crown image?
+- Flaticon: https://www.flaticon.com/search?word=crown
+- Icons8: https://icons8.com/icons/set/crown
+- PNG images: https://www.pngwing.com/en/search?q=crown
