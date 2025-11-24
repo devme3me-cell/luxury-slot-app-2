@@ -379,3 +379,27 @@
 .accent-ring {
   display: none;
 }
+
+/* Pulse Animation for Buttons */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1) drop-shadow(0 0 0px rgba(255, 215, 0, 0));
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+    filter: brightness(1.1) drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
+  }
+}
+
+.pulse-button {
+  display: block;
+  animation: pulse-glow 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.pulse-button:hover {
+  animation-play-state: paused;
+}

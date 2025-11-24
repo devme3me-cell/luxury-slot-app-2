@@ -267,6 +267,87 @@ export default function Home() {
           </p>
         </div>
 
+        {/* 6 Button Grid - Replace placeholder images with your own */}
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-6">
+          {/* Button 1 - Replace /button1.png and /button1-link with your own */}
+          <a
+            href="/button1-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pulse-button block"
+            style={{ animationDelay: '0s' }}
+          >
+            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
+              Button 1
+            </div>
+          </a>
+
+          {/* Button 2 - Replace /button2.png and /button2-link with your own */}
+          <a
+            href="/button2-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pulse-button block"
+            style={{ animationDelay: '0.2s' }}
+          >
+            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
+              Button 2
+            </div>
+          </a>
+
+          {/* Button 3 - Replace /button3.png and /button3-link with your own */}
+          <a
+            href="/button3-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pulse-button block"
+            style={{ animationDelay: '0.4s' }}
+          >
+            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
+              Button 3
+            </div>
+          </a>
+
+          {/* Button 4 - Replace /button4.png and /button4-link with your own */}
+          <a
+            href="/button4-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pulse-button block"
+            style={{ animationDelay: '0.6s' }}
+          >
+            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
+              Button 4
+            </div>
+          </a>
+
+          {/* Button 5 - Replace /button5.png and /button5-link with your own */}
+          <a
+            href="/button5-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pulse-button block"
+            style={{ animationDelay: '0.8s' }}
+          >
+            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
+              Button 5
+            </div>
+          </a>
+
+          {/* Button 6 - Replace /button6.png and /button6-link with your own */}
+          <a
+            href="/button6-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pulse-button block"
+            style={{ animationDelay: '1s' }}
+          >
+            <div className="w-full aspect-[5/2] bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-sm md:text-base hover:scale-105 transition-transform shadow-lg">
+              Button 6
+            </div>
+          </a>
+        </div>
+
         <div className="luxury-card rounded-2xl p-6 md:p-8">
           {currentStep !== 'result' && (
             <div className="step-indicator mb-8">

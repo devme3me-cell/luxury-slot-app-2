@@ -1,0 +1,78 @@
+📌 BUTTON IMAGES SETUP INSTRUCTIONS
+====================================
+
+There are 6 button placeholders at the top of the page with pulse animations.
+
+TO REPLACE WITH YOUR IMAGES:
+----------------------------
+
+1. ADD YOUR BUTTON IMAGES TO public/ FOLDER:
+   - button1.png
+   - button2.png
+   - button3.png
+   - button4.png
+   - button5.png
+   - button6.png
+
+   Recommended size: 200x80 pixels (or similar aspect ratio)
+   Format: PNG, JPG, or GIF
+
+
+2. UPDATE THE LINKS IN src/app/page.tsx:
+
+   Find these lines (around line 271-373):
+
+   <a href="/button1-link" ...>  ← Change to your link
+   <a href="/button2-link" ...>  ← Change to your link
+   <a href="/button3-link" ...>  ← Change to your link
+   <a href="/button4-link" ...>  ← Change to your link
+   <a href="/button5-link" ...>  ← Change to your link
+   <a href="/button6-link" ...>  ← Change to your link
+
+   Replace "/buttonX-link" with your actual URLs:
+   - External links: "https://example.com"
+   - Internal pages: "/page-name"
+   - Remove link: Change <a> to <div>
+
+
+3. CURRENT PLACEHOLDER BEHAVIOR:
+   - Shows yellow placeholder buttons with "Button 1", "Button 2", etc.
+   - When you add your images to public/, they will replace placeholders
+   - Each button has a different pulse animation tempo
+
+
+4. ANIMATION TIMING:
+   - Button 1: 0s delay (starts immediately)
+   - Button 2: 0.2s delay
+   - Button 3: 0.4s delay
+   - Button 4: 0.6s delay
+   - Button 5: 0.8s delay
+   - Button 6: 1.0s delay
+
+   This creates a cascading pulse effect!
+
+
+5. LAYOUT:
+   - Mobile: 3 columns (2 rows)
+   - Desktop: 6 columns (1 row)
+
+
+EXAMPLE REPLACEMENT:
+-------------------
+
+Change from:
+<a href="/button1-link" ...>
+
+To:
+<a href="https://your-website.com/promo" ...>
+
+Or for internal page:
+<a href="/about" ...>
+
+
+TIPS:
+-----
+- Images will auto-scale to container width
+- Hover effect pauses the pulse animation
+- Use transparent PNGs for best results
+- Keep file sizes small for fast loading
