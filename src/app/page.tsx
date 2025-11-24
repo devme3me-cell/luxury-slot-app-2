@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import confetti from 'canvas-confetti';
-import { Upload, Clock, Trophy, ChevronRight, ChevronLeft, X, Star, Crown } from 'lucide-react';
+import { Upload, Clock, Trophy, ChevronRight, ChevronLeft, X, Star } from 'lucide-react';
 import SlotMachine from '@/components/SlotMachine';
 import { saveEntry, getEntries, getTodayEntries, type Entry } from '@/lib/supabase';
 
@@ -462,7 +462,7 @@ export default function Home() {
               <div className="luxury-card rounded-xl p-4 border-2 border-yellow-500/30">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <Crown className="w-6 h-6 text-yellow-500" />
+                    <span className="text-2xl">👑</span>
                     <div>
                       <div className="text-sm text-white/60">已選擇方案</div>
                       <div className="text-2xl font-bold text-yellow-500">
