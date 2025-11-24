@@ -255,7 +255,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <Crown className="w-10 h-10 text-yellow-500 crown-icon" />
             <h1 className="text-4xl md:text-5xl font-bold gold-gradient">
-              達特
+              您的主治醫師達特喂
             </h1>
             <Crown className="w-10 h-10 text-yellow-500 crown-icon" style={{ animationDelay: '0.5s' }} />
           </div>
@@ -513,9 +513,6 @@ export default function Home() {
                           }`}
                         >
                           {prize.name}
-                        </div>
-                        <div className="text-xs text-white/50">
-                          機率 {prize.prob}
                         </div>
                       </div>
                     </div>
