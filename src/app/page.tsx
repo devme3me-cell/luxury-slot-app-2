@@ -268,7 +268,7 @@ export default function Home() {
         </div>
 
         {/* 6 Button Grid - Replace placeholder images with your own */}
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-6">
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-6">
           {/* Button 1 - Replace /button1.png and /button1-link with your own */}
           <a
             href="/button1-link"
