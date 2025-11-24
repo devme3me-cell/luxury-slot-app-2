@@ -278,9 +278,9 @@ export default function Home() {
             style={{ animationDelay: '0s' }}
           >
             <img
-              src="/button1.png"
+              src="https://ugc.same-assets.com/z3n7G9P1Bz9_Q3C7EqeW1QCrTwQyvPGU.png"
               alt="Button 1"
-              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+              className="w-1/2 h-auto mx-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
             />
           </a>
 
@@ -293,9 +293,9 @@ export default function Home() {
             style={{ animationDelay: '0.2s' }}
           >
             <img
-              src="/button2.png"
+              src="https://ugc.same-assets.com/JytMqVKuta1_cFJgdlxHDnfBaUM-SbyJ.png"
               alt="Button 2"
-              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+              className="w-1/2 h-auto mx-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
             />
           </a>
 
@@ -308,9 +308,9 @@ export default function Home() {
             style={{ animationDelay: '0.4s' }}
           >
             <img
-              src="/button3.png"
+              src="https://ugc.same-assets.com/OPL1Bobiz_ija3lJ1_lsaAF8bwILVdr1.png"
               alt="Button 3"
-              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+              className="w-1/2 h-auto mx-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
             />
           </a>
 
@@ -323,9 +323,9 @@ export default function Home() {
             style={{ animationDelay: '0.6s' }}
           >
             <img
-              src="/button4.png"
+              src="https://ugc.same-assets.com/eoN_OLS6TZZHC8ywPM7_FTo9TLF3svpQ.png"
               alt="Button 4"
-              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+              className="w-1/2 h-auto mx-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
             />
           </a>
 
@@ -338,9 +338,9 @@ export default function Home() {
             style={{ animationDelay: '0.8s' }}
           >
             <img
-              src="/button5.png"
+              src="https://ugc.same-assets.com/IykuiBSHMFhJjQ2Ffq3uHgYjZBrzaQJ2.png"
               alt="Button 5"
-              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+              className="w-1/2 h-auto mx-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
             />
           </a>
 
@@ -353,9 +353,9 @@ export default function Home() {
             style={{ animationDelay: '1s' }}
           >
             <img
-              src="/button6.png"
+              src="https://ugc.same-assets.com/b3f7OC3SgXYiD7f2ZscmyJBKZEzjPGZA.png"
               alt="Button 6"
-              className="w-full h-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
+              className="w-1/2 h-auto mx-auto rounded-lg hover:scale-105 transition-transform shadow-lg"
             />
           </a>
         </div>
