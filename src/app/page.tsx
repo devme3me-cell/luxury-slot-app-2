@@ -18,6 +18,7 @@ export default function Home() {
   const [prizeWon, setPrizeWon] = useState<number>(0);
   const [entries, setEntries] = useState<Entry[]>([]);
   const [shareStatus, setShareStatus] = useState<'idle' | 'copied' | 'shared' | 'error'>('idle');
+  const [logoLoaded, setLogoLoaded] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -252,23 +253,49 @@ export default function Home() {
     <main className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-4xl">
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            {/* Crown image placeholder - shows emoji until you add crown-placeholder.png to public/ folder */}
-            <span className="text-4xl crown-icon">👑</span>
-            <h1 className="text-4xl md:text-5xl font-bold gold-gradient">
-              您的主治醫師達特喂
-            </h1>
+          {/* Logo - Replace /logo.png with your own logo */}
+          <div className="flex justify-center mb-4">
+            {logoLoaded ? (
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="h-28 md:h-32 w-auto object-contain"
+                onLoad={() => setLogoLoaded(true)}
+              />
+            ) : (
+              <>
+                <img
+                  src="/logo.png"
+                  alt="Logo"
+                  className="hidden"
+                  onLoad={() => setLogoLoaded(true)}
+                  onError={() => setLogoLoaded(false)}
+                />
+                {/* Placeholder logo image - replace with your own placeholder if desired */}
+                <img
+                  src="https://ugc.same-assets.com/l54fsjPmExAWOnOwVCO8RIqpiRdk_r-k.png"
+                  alt="Placeholder Logo"
+                  className="h-28 md:h-32 w-auto opacity-70 object-contain"
+                />
+              </>
+            )}
           </div>
+
+          <h1 className="text-4xl md:text-5xl font-bold gold-gradient mb-4">
+            您的主治醫師達特喂
+          </h1>
           <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-[#dedede]">
             每日儲值輪盤簽到活動
           </h2>
           <p className="text-yellow-500/60">
-            儲值 $1,000 以上當日即可享有幸運抽獎一次，保證有獎喔！
+            儲值 $1,000 以上當日即可享有幸運抽獎一次
+
+<br>保證有獎喔！
           </p>
         </div>
 
         {/* 6 Button Grid - Replace placeholder images with your own */}
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-6">
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-1 mb-6">
           {/* Button 1 - Replace /button1.png and /button1-link with your own */}
           <a
             href="/button1-link"

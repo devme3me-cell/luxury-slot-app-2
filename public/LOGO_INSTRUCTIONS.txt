@@ -1,0 +1,50 @@
+📌 LOGO IMAGE INSTRUCTIONS
+================================
+
+Currently: Logo image area is hidden (no image found)
+
+TO ADD YOUR LOGO:
+-----------------
+
+1. ADD YOUR LOGO IMAGE TO public/ FOLDER:
+   - Filename: logo.png (or logo.jpg, logo.svg, logo.gif)
+   - Recommended height: 80-100 pixels
+   - Transparent background (PNG) recommended for best results
+   - Width: Any (will auto-scale proportionally)
+
+2. SUPPORTED FORMATS:
+   - PNG (recommended for transparency)
+   - JPG
+   - SVG
+   - GIF
+
+3. IF USING A DIFFERENT FILENAME:
+
+   Edit src/app/page.tsx (around line 260):
+
+   Change:
+   <img src="/logo.png" alt="Logo" ...>
+
+   To:
+   <img src="/your-logo-name.png" alt="Logo" ...>
+
+4. LOGO PLACEMENT:
+   - Centered above the title "您的主治醫師達特喂"
+   - Height: 80px (mobile), 96px (desktop)
+   - Auto-width to maintain aspect ratio
+
+5. TIPS:
+   - Use a high-resolution logo (2x size) for crisp display on retina screens
+   - Keep file size under 100KB for fast loading
+   - Test on both light and dark backgrounds
+
+EXAMPLE LOGO SOURCES:
+---------------------
+- Your own brand logo
+- Custom designed logo
+- Logo generators:
+  • Canva: https://www.canva.com/create/logos/
+  • LogoMakr: https://logomakr.com/
+  • Hatchful: https://www.shopify.com/tools/logo-maker
+
+NOTE: If no logo is added, the space will remain hidden and won't affect the layout.

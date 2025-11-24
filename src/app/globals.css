@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --background: 0 0% 5%;
+    --background: 140 45% 8%;
     --foreground: 43 100% 85%;
 
-    --card: 0 0% 10%;
+    --card: 140 40% 12%;
     --card-foreground: 43 100% 85%;
 
-    --popover: 0 0% 10%;
+    --popover: 140 40% 12%;
     --popover-foreground: 43 100% 85%;
 
     --primary: 43 100% 50%;
@@ -19,7 +19,7 @@
     --secondary: 43 50% 30%;
     --secondary-foreground: 43 100% 85%;
 
-    --muted: 0 0% 15%;
+    --muted: 140 30% 15%;
     --muted-foreground: 43 50% 65%;
 
     --accent: 43 100% 45%;
@@ -28,8 +28,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 43 50% 25%;
-    --input: 0 0% 15%;
+    --border: 43 80% 55%;
+    --input: 140 35% 15%;
     --ring: 43 100% 50%;
 
     --radius: 0.5rem;
@@ -37,8 +37,8 @@
     --gold: 43 100% 50%;
     --gold-light: 43 100% 65%;
     --gold-dark: 43 100% 35%;
-    --black-primary: 0 0% 5%;
-    --black-secondary: 0 0% 10%;
+    --black-primary: 140 45% 8%;
+    --black-secondary: 140 40% 12%;
   }
 }
 
@@ -48,10 +48,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    background: radial-gradient(1200px circle at 10% 10%, rgba(0, 245, 255, 0.12), transparent 40%),
-                radial-gradient(1200px circle at 90% 20%, rgba(255, 94, 248, 0.10), transparent 45%),
-                radial-gradient(1200px circle at 30% 85%, rgba(124, 255, 132, 0.10), transparent 40%),
-                linear-gradient(135deg, #0a0a0a 0%, #181818 50%, #0a0a0a 100%);
+    background: radial-gradient(1200px circle at 10% 10%, rgba(3, 218, 198, 0.12), transparent 40%),
+                radial-gradient(1200px circle at 90% 20%, rgba(255, 215, 0, 0.08), transparent 45%),
+                radial-gradient(1200px circle at 30% 85%, rgba(16, 185, 129, 0.10), transparent 40%),
+                radial-gradient(1200px circle at 70% 60%, rgba(6, 78, 59, 0.15), transparent 50%),
+                linear-gradient(135deg, #032521 0%, #1d3430 50%, #032521 100%);
     min-height: 100vh;
   }
 }
@@ -91,10 +92,10 @@
 
 .luxury-card {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.4);
   -webkit-backdrop-filter: saturate(180%) blur(16px);
   backdrop-filter: saturate(180%) blur(16px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 215, 0, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -115,12 +116,12 @@
 .luxury-button {
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 215, 0, 0.3);
   -webkit-backdrop-filter: saturate(180%) blur(16px);
   backdrop-filter: saturate(180%) blur(16px);
   font-weight: 700;
   transition: all 0.15s ease;
-  box-shadow: none;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -137,7 +138,7 @@
 
 .luxury-input {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.3);
   color: #eaeaea;
   -webkit-backdrop-filter: saturate(180%) blur(12px);
   backdrop-filter: saturate(180%) blur(12px);
@@ -189,7 +190,7 @@
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.3);
   color: rgba(255, 255, 255, 0.6);
   font-weight: bold;
   font-size: 1.2rem;
@@ -218,7 +219,7 @@
 /* Upload area */
 .upload-area {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border: 1px dashed rgba(255, 215, 0, 0.4);
   -webkit-backdrop-filter: saturate(180%) blur(12px);
   backdrop-filter: saturate(180%) blur(12px);
   border-radius: 1rem;
@@ -310,7 +311,7 @@
 .amount-option {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
   -webkit-backdrop-filter: saturate(180%) blur(12px);
   backdrop-filter: saturate(180%) blur(12px);
   border-radius: 1rem;
