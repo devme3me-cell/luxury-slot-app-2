@@ -210,24 +210,24 @@ export default function Home() {
   const getPrizeDisplay = () => {
     if (selectedAmount === '1000') {
       return [
-        { name: '58獎金', prob: '80', color: 'cyan' },
-        { name: '168獎金', prob: '10', color: 'pink' },
-        { name: '🏀 精準體育單 ⚾️', prob: '8', color: 'purple' },
-        { name: '666獎金', prob: '2', color: 'green' },
+        { name: '58獎金', prob: '80%', color: 'cyan', emoji: '💰' },
+        { name: '168獎金', prob: '10%', color: 'pink', emoji: '💎' },
+        { name: '🏀 精準體育單', prob: '9%', color: 'purple', emoji: '🏀' },
+        { name: '388獎金', prob: '1%', color: 'green', emoji: '🎰' },
       ];
     } else if (selectedAmount === '5000') {
       return [
-        { name: '188獎金', prob: '80', color: 'cyan' },
-        { name: '388獎金', prob: '10', color: 'pink' },
-        { name: '🏀 精準體育單 ⚾️', prob: '8', color: 'purple' },
-        { name: '1688獎金', prob: '2', color: 'green' },
+        { name: '188獎金', prob: '80%', color: 'cyan', emoji: '💰' },
+        { name: '388獎金', prob: '10%', color: 'pink', emoji: '💎' },
+        { name: '🏀 精準體育單', prob: '9%', color: 'purple', emoji: '🏀' },
+        { name: '888獎金', prob: '1%', color: 'green', emoji: '🎰' },
       ];
     } else {
       return [
-        { name: '388獎金', prob: '80', color: 'cyan' },
-        { name: '1288獎金', prob: '10', color: 'pink' },
-        { name: '🏀 精準體育單 ⚾️', prob: '8', color: 'purple' },
-        { name: '3688獎金', prob: '2', color: 'green' },
+        { name: '388獎金', prob: '80%', color: 'cyan', emoji: '💰' },
+        { name: '666獎金', prob: '10%', color: 'pink', emoji: '💎' },
+        { name: '🏀 精準體育單', prob: '9%', color: 'purple', emoji: '🏀' },
+        { name: '1888獎金', prob: '1%', color: 'green', emoji: '🎰' },
       ];
     }
   };
@@ -458,37 +458,65 @@ export default function Home() {
 
           {currentStep === 'wheel' && (
             <div className="space-y-6">
+              {/* Selected Tier Display */}
+              <div className="luxury-card rounded-xl p-4 border-2 border-yellow-500/30">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <Crown className="w-6 h-6 text-yellow-500" />
+                    <div>
+                      <div className="text-sm text-white/60">已選擇方案</div>
+                      <div className="text-2xl font-bold text-yellow-500">
+                        今日${selectedAmount === '1000' ? '1,000' : selectedAmount === '5000' ? '5,000' : '10,000'}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm text-white/60">儲值金額</div>
+                    <div className="text-xl font-bold text-white">
+                      ${selectedAmount === '1000' ? '1,000' : selectedAmount === '5000' ? '5,000' : '10,000'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Prize Information */}
               <div className="luxury-card rounded-xl p-4">
                 <div className="flex items-center gap-2 text-yellow-500 mb-2">
                   <Trophy className="w-5 h-5" />
                   <span className="font-semibold">獎項說明</span>
                 </div>
-                <div className="grid grid-cols-2 gap-4 mt-4">
+                <div className="grid grid-cols-2 gap-3 mt-4">
                   {getPrizeDisplay().map((prize, index) => (
                     <div
                       key={index}
-                      className={`text-center p-3 rounded-lg ${
+                      className={`p-3 rounded-lg border ${
                         prize.color === 'cyan'
-                          ? 'bg-cyan-500/10'
+                          ? 'bg-cyan-500/10 border-cyan-500/30'
                           : prize.color === 'pink'
-                          ? 'bg-pink-500/10'
+                          ? 'bg-pink-500/10 border-pink-500/30'
                           : prize.color === 'purple'
-                          ? 'bg-purple-500/10'
-                          : 'bg-green-400/10'
+                          ? 'bg-purple-500/10 border-purple-500/30'
+                          : 'bg-green-400/10 border-green-400/30'
                       }`}
                     >
-                      <div
-                        className={`font-bold ${
-                          prize.color === 'cyan'
-                            ? 'text-cyan-400'
-                            : prize.color === 'pink'
-                            ? 'text-pink-400'
-                            : prize.color === 'purple'
-                            ? 'text-purple-400'
-                            : 'text-green-400'
-                        }`}
-                      >
-                        {prize.name}
+                      <div className="text-center">
+                        <div className="text-2xl mb-1">{prize.emoji}</div>
+                        <div
+                          className={`font-bold text-sm mb-1 ${
+                            prize.color === 'cyan'
+                              ? 'text-cyan-400'
+                              : prize.color === 'pink'
+                              ? 'text-pink-400'
+                              : prize.color === 'purple'
+                              ? 'text-purple-400'
+                              : 'text-green-400'
+                          }`}
+                        >
+                          {prize.name}
+                        </div>
+                        <div className="text-xs text-white/50">
+                          機率 {prize.prob}
+                        </div>
                       </div>
                     </div>
                   ))}
