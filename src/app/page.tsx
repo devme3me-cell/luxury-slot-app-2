@@ -298,7 +298,7 @@ export default function Home() {
         <div className="grid grid-cols-3 md:grid-cols-6 gap-1 mb-6">
           {/* Button 1 - Replace /button1.png and /button1-link with your own */}
           <a
-            href="/button1-link"
+            href="https://line.me/R/ti/p/@250zfkzz"
             target="_blank"
             rel="noopener noreferrer"
             className="pulse-button block"
@@ -313,7 +313,7 @@ export default function Home() {
 
           {/* Button 2 - Replace /button2.png and /button2-link with your own */}
           <a
-            href="/button2-link"
+            href="https://www.instagram.com/doctor.wei1226"
             target="_blank"
             rel="noopener noreferrer"
             className="pulse-button block"
@@ -328,7 +328,7 @@ export default function Home() {
 
           {/* Button 3 - Replace /button3.png and /button3-link with your own */}
           <a
-            href="/button3-link"
+            href="https://www.youtube.com/@doctor.wei1226"
             target="_blank"
             rel="noopener noreferrer"
             className="pulse-button block"
@@ -343,7 +343,7 @@ export default function Home() {
 
           {/* Button 4 - Replace /button4.png and /button4-link with your own */}
           <a
-            href="/button4-link"
+            href="https://www.facebook.com/61578143093054"
             target="_blank"
             rel="noopener noreferrer"
             className="pulse-button block"
@@ -358,7 +358,7 @@ export default function Home() {
 
           {/* Button 5 - Replace /button5.png and /button5-link with your own */}
           <a
-            href="/button5-link"
+            href="https://www.twitch.tv/doctorwei1226/about"
             target="_blank"
             rel="noopener noreferrer"
             className="pulse-button block"
