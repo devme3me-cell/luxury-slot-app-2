@@ -254,24 +254,7 @@ export default function Home() {
       <div className="w-full max-w-4xl">
         <div className="text-center mb-8">
           {/* Logo - Replace /logo.png with your own logo */}
-          <div className="flex justify-center mb-4">
-            {logoLoaded ? (
-              <img
-                src="/logo.png"
-                alt="Logo"
-                className="h-28 md:h-32 w-auto object-contain"
-                onLoad={() => setLogoLoaded(true)}
-              />
-            ) : (
-              <>
-                <img
-                  src="/logo.png"
-                  alt="Logo"
-                  className="hidden"
-                  onLoad={() => setLogoLoaded(true)}
-                  onError={() => setLogoLoaded(false)}
-                />
-                {/* Placeholder logo image - replace with your own placeholder if desired */}
+          <div className="flex justify-center mb-4"
                 <img
                   src="https://ugc.same-assets.com/l54fsjPmExAWOnOwVCO8RIqpiRdk_r-k.png"
                   alt="Placeholder Logo"
